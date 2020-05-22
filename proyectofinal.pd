@@ -1,0 +1,42 @@
+#N canvas 0 0 715 567 10;
+#X declare -lib mrpeach;
+#X obj 63 -302 import mrpeach;
+#X obj 52 213 udpsend;
+#X msg 120 139 disconnect;
+#X obj 54 138 packOSC;
+#X obj 322 132 udpreceive 12000;
+#X obj 324 166 unpackOSC;
+#X obj 326 196 print;
+#X obj 381 195 routeOSC /Alan /lucina;
+#X floatatom 377 215 5 0 0 0 - - -;
+#X floatatom 449 220 5 0 0 0 - - -;
+#X obj 285 -202 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6700 1;
+#X obj 80 -166 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 10600 1;
+#X floatatom 98 -103 5 0 0 0 - - -;
+#X floatatom 244 -57 5 0 0 0 - - -;
+#X obj 389 -40 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8700 1;
+#X floatatom 358 8 5 0 0 0 - - -;
+#X msg 240 -21 send /r1 \$1;
+#X msg 269 42 send /g1 \$1;
+#X msg 113 171 connect 127.0.0.1 12000;
+#X msg 77 -61 send /b5 \$1;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 19 0;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 17 0;
+#X connect 16 0 3 0;
+#X connect 17 0 3 0;
+#X connect 18 0 1 0;
+#X connect 19 0 3 0;
